@@ -12,6 +12,6 @@ const refreshSchema = new Schema({
     },
 },{
   timestamps: true  
-})
+});
 
 module.exports = mongoose.model('Refresh',refreshSchema ,'tokens');
