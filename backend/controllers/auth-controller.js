@@ -17,10 +17,13 @@ class AuthController{
         //generate 4 digit OTP
         const otp = await otpService.generateOtp();
 
+        // console.log(otp);
+
         // hash opt 
         const ttl = 1000 * 60 * 2; //2 min expiry 
         const expires = Date.now() + ttl;
         const data = `${phone}.${otp}.${expires}`;
+        console.log(data);
         const hash = hashService.hashOtp(data);
 
 
